@@ -11,6 +11,7 @@ class Game extends React.Component{
     };
 
     this.updateGame = this.updateGame.bind(this);
+    this.isGameOver = this.isGameOver.bind(this);
   }
 
   updateGame(tile, isRevealing){
@@ -21,6 +22,18 @@ class Game extends React.Component{
     }
 
     this.setState({ board: this.state.board })
+  }
+
+  isGameOver() {
+    return this.state.board.won() || this.state.board.lost();
+  }
+
+  componentDidUpdate() {
+    if (this.isGameOver()) {
+      const modal = document.querySelector('.modal');
+      modal.classList.add('is-open');
+      
+    }
   }
 
   render(){

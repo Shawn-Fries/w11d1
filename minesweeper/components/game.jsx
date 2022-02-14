@@ -1,4 +1,5 @@
 import React from "react";
+import {Board} from "../minesweeper";
 
 
 class Game extends React.Component{
@@ -14,7 +15,14 @@ class Game extends React.Component{
   }
 
   render(){
-    
+     //debugger
+    return (
+        <div>
+            <Board board={this.state.board} updateGame={this.updateGame.bind(this)}></Board>
+        </div>
+    )
   }
 
 }
+
+export default Game

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Tile from "./minesweeper";
-import Game from "./components/game"
+import Game from "./components/game";
 
 
 document.addEventListener("DOMContentLoaded", () => {

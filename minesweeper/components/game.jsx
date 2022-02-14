@@ -1,5 +1,6 @@
 import React from "react";
 import {Board} from "../minesweeper";
+import BoardX from './board'
 
 
 class Game extends React.Component{
@@ -7,7 +8,9 @@ class Game extends React.Component{
     super(props);
     this.state = {
       board: new Board(5, 7)
-    }
+    };
+
+    this.updateGame = this.updateGame.bind(this);
   }
 
   updateGame(){
@@ -15,11 +18,8 @@ class Game extends React.Component{
   }
 
   render(){
-     //debugger
-    return (
-        <div>
-            <Board board={this.state.board} updateGame={this.updateGame.bind(this)}></Board>
-        </div>
+    return ( 
+      <BoardX board={this.state.board} updateGame={this.updateGame} />
     )
   }
 

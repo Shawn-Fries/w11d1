@@ -7,8 +7,10 @@ class TileIcon extends React.Component {
         super(props);
         this.state = {
             icon: ""
-        }
-        this.overallStatus = this.overallStatus.bind(this)
+        };
+
+        this.overallStatus = this.overallStatus.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -16,9 +18,9 @@ class TileIcon extends React.Component {
     }
 
     overallStatus() {
-        if (this.props.tile.bombed) {
+        if (this.props.tile.bombed && this.props.tile.explored ) {
             return 'bombed'
-        } else if (this.props.tile.flagged) {
+        } else if (this.props.tile.flagged && !this.props.tile.explored ) {
             return 'flagged'
         } else if (this.props.tile.explored) {
             return 'revealed'
@@ -41,11 +43,16 @@ class TileIcon extends React.Component {
        }        
     }
     
-    render() {
-        //debugger
-        return (
-            <span className={`tile ${this.overallStatus()}`}>
+    handleClick(e){
+        let isRevealing = !e.altKey
+        this.props.updateGame(this.props.tile, isRevealing)
+    }
 
+
+    render() {
+        
+        return (
+            <span className={`tile ${this.overallStatus()}`} onClick={this.handleClick} >
                 {this.state.icon}
             </span>
         )

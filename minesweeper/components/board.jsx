@@ -13,7 +13,7 @@ class Board extends React.Component{
         {this.props.board.grid.map((row, outerIdx)=>{
             return <li className='boardRow' key={outerIdx}>
                 {row.map((tile, innerIdx) => {
-                return <Tile tile={this.props.board.grid[outerIdx][innerIdx]} key={`${outerIdx}${innerIdx}`}updateGame={this.updateGame}/>
+                return <Tile tile={this.props.board.grid[outerIdx][innerIdx]} key={`${outerIdx}${innerIdx}`} updateGame={this.updateGame}/>
                 })}
             </li>
         })}

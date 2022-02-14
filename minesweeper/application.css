@@ -1,8 +1,11 @@
 .boardRow {
-    list-style: none;
+  list-style: none;
 }
 
-.tile {
-    border-style: inset;
-    border-style: outset;
+.revealed {
+  border-style: inset;
+}
+
+.unrevealed {
+  border-style: outset;
 }

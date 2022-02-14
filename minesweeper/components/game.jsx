@@ -13,8 +13,14 @@ class Game extends React.Component{
     this.updateGame = this.updateGame.bind(this);
   }
 
-  updateGame(){
-    
+  updateGame(tile, isRevealing){
+    if (isRevealing){
+      tile.explore()
+    } else{
+      tile.toggleFlag()
+    }
+
+    this.setState({ board: this.state.board })
   }
 
   render(){

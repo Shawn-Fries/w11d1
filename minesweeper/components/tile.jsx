@@ -17,6 +17,8 @@ class TileIcon extends React.Component {
         this.displayIcon()
     }
 
+       
+
     overallStatus() {
         if (this.props.tile.bombed && this.props.tile.explored ) {
             return 'bombed'
@@ -46,8 +48,11 @@ class TileIcon extends React.Component {
     handleClick(e){
         let isRevealing = !e.altKey
         this.props.updateGame(this.props.tile, isRevealing)
+
+        this.displayIcon();
     }
 
+    
 
     render() {
         

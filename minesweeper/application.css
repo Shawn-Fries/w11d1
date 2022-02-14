@@ -1,5 +1,8 @@
-
-
 .boardRow {
     list-style: none;
+}
+
+.tile {
+    border-style: inset;
+    border-style: outset;
 }
